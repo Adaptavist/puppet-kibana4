@@ -10,6 +10,7 @@ class kibana4::install {
 
     $download_url = $kibana4::package_download_url ? {
       undef   => "${kibana4::params::es_download_site_url}/kibana/kibana/${package_name}-${version}.tar.gz",
+      "false" => "${kibana4::params::es_download_site_url}/kibana/kibana/${package_name}-${version}.tar.gz",
       default => $kibana4::package_download_url,
     }
 
